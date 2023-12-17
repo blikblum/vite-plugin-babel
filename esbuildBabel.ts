@@ -58,9 +58,9 @@ export const esbuildPluginBabel = (options: ESBuildPluginBabelOptions = {}): Plu
 		};
 
 		build.onLoad({ filter: /.*/, namespace }, async args => {
-      const shouldTransform = filter.test(args.path);
+			const shouldTransform = filter.test(args.path);
 
-      if (!shouldTransform) return;
+			if (!shouldTransform) return;
 
 			const contents = await fs.promises.readFile(args.path, 'utf8');
 
